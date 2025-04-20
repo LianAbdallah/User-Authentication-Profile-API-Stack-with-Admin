@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "62d9f5e5-f47e-4834-b40f-650e50890558",
+		"name": "profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40790272"
+	},
+	"item": [
+		{
+			"name": "correct reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\" : \"test2@gmail.com\",\r\n     \"fullName\" : \"test2\",\r\n    \"userName\" : \"test2\",\r\n    \"password\" : \"test2\",\r\n    \"phone\" : \"06945\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wrong reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\" : \"4444\",\r\n    \"userName\" : \"99999\",\r\n    \"email\" : \"999@gmail.com\",\r\n    \"phone\" : \"jjkkfnjf\",\r\n    \"password\" : \"kmldkfjvlksjnd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcwLCJpYXQiOjE3NDI0NzYxMzUsImV4cCI6MTc0NTA2ODEzNX0.eEDLaKu0ndQKEQq16p9SGzUhtQIDTJGExeNd7VkxDP8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/profile/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"test1@gmail.com\",\r\n    \"password\" : \"test1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYzLCJpYXQiOjE3NDIzMDcxNjksImV4cCI6MTc0NDg5OTE2OX0.47cOWAkAnnJNzFLug7j_GuMAYG3u7vzjPupwROGMJ3k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\" : \"999999\",\r\n    \"userName\" : \"99999\",\r\n    \"email\" : \"999@gmail.com\",\r\n    \"phone\" : \"jjkkfnjf\",\r\n    \"password\" : \"kmldkfjvlksjnd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/admin/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"admin",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MzUzMjI5OCwiZXhwIjoxNzQ2MTI0Mjk4fQ.Er6I6mgpXCCng3VEpiRPlCdabZSFN1xlh0h7KDH-U-s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/admin/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MzUzMjI5OCwiZXhwIjoxNzQ2MTI0Mjk4fQ.Er6I6mgpXCCng3VEpiRPlCdabZSFN1xlh0h7KDH-U-s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"test3@gmail.com\",\"fullName\":\"test 33 new\",\"userName\":\"test3 username\",\"phone\":\"test1\",\"password\":\"test3\",\"id\":\"8\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/admin/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MzUzMjI5OCwiZXhwIjoxNzQ2MTI0Mjk4fQ.Er6I6mgpXCCng3VEpiRPlCdabZSFN1xlh0h7KDH-U-s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/admin/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin be admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MzUzMjI5OCwiZXhwIjoxNzQ2MTI0Mjk4fQ.Er6I6mgpXCCng3VEpiRPlCdabZSFN1xlh0h7KDH-U-s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/admin/user/admin/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"user",
+						"admin",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

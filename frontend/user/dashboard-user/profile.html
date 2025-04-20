@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./userdashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <h2>Settings</h2>
+        <ul>
+          <li>
+            <a href="./Home.html" id="home-link"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="./profile.html" class="active" id="profile-link"
+              ><i class="fas fa-user"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="../login/index.html" id="logoutBtn"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+        </ul>
+      </aside>
+      <main class="main-content">
+        <section class="profile-form">
+          <h1><i class="fas fa-user-edit icon"></i>Edit Your Profile</h1>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="user-name">Full Name</label>
+              <input type="text" id="user-name" name="user-name" />
+            </div>
+            <div class="form-group">
+              <label for="user-email">Email </label>
+              <input type="email" id="user-email" name="user-email" />
+            </div>
+            <div class="form-group">
+              <label for="user-phone">Phone Number</label>
+              <input type="text" id="user-phone" name="user-phone" />
+            </div>
+            <div class="form-group">
+              <label for="password">New Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter new password"
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm new password"
+              />
+            </div>
+
+            <div class="btn-container">
+              <button type="submit" class="btn-submit">Save Changes</button>
+              <button type="button" class="btn-delete">Delete Account</button>
+            </div>
+          </form>
+        </section>
+        <div id="notification" class="hidden">
+          <i id="notification-icon"></i>
+          <p id="notification-message"></p>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="./userdashboard.js"></script>
+</html>

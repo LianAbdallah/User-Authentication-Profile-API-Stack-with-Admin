@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+        <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
+        <ul>
+        <li><a href="./admin-Home.html" id="home-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="./Manage Users.html" class="active" id="profile-link"><i class="fas fa-user"></i> Manage Users </a></li>
+        <li><a href="../login/index.html" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      
+      <!-- إحصائيات المستخدمين والرسم البياني بجانب بعض -->
+      <section class="stats-and-chart">
+        <!-- إحصائيات المستخدمين -->
+        <div class="stats">
+          <h1>Statistics</h1>
+          <div class="stats-cards">
+            <div class="card">
+              <h3>Total Users</h3>
+              <p id="totalUsers">300</p>
+            </div>
+            <div class="card">
+              <h3>Active Users</h3>
+              <p id="activeUsers">200</p>
+            </div>
+            <div class="card">
+              <h3>Inactive Users</h3>
+              <p id="inactiveUsers">60</p>
+            </div>
+            <div class="card">
+              <h3>New Users</h3>
+              <p id="newUsers">50</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- الرسم البياني -->
+        <div class="activity-stats">
+          <h1>Activity Statistics</h1>
+          <canvas id="userStatsChart" width="400" height="300"></canvas> <!-- تصغير الحجم هنا -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

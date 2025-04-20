@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body>
+    <!-- بداية الحاوية الرئيسية -->
+    <div class="dashboard-container">
+      <!-- الشريط الجانبي -->
+      <aside class="sidebar">
+        <h2><i class="fas fa-users"></i> User Management</h2>
+        <ul>
+          <li>
+            <a href="./admin-Home.html" id="home-link"
+              ><i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="./Manage Users.html" class="active" id="profile-link"
+              ><i class="fas fa-user"></i> Manage Users</a
+            >
+          </li>
+          <li>
+            <a href="../user/login/index.html" id="logout-link"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- المحتوى الرئيسي -->
+      <div class="main-content">
+        <h1>All Users</h1>
+        <input
+          type="text"
+          id="search-user"
+          placeholder="Search users..."
+          class="search-bar"
+        />
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Phone</th>
+              <th>user Name</th>
+              <th>Account Created On</th>
+              <th>Last Login</th>
+              <!-- <th>ID</th> -->
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">            
+             <!-- يمكن تكرار هذا الـ tr لكل مستخدم في القائمة -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- نافذة تعديل المستخدم (Modal) -->
+    <div id="updateUserModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h3>Update User Information</h3>
+        <form id="updateUserForm">
+          <div class="input-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" required />
+          </div>
+          <div class="input-group">
+            <label for="userName">user name</label>
+            <input type="text" id="userName" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          
+          <div class="input-group" >
+            <!-- <label for="id" class="hidden">id</label> -->
+            <input type="number" id="id" class="hidden"/>
+          </div>
+          <!-- حقل الدور الذي يمكن تعديله -->
+          <div class="input-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="btn-submit">Save Changes</button>
+            <button type="button" class="btn-delete">Delete Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="notification" class="hidden">
+      <div id="notification-icon"></div>
+      <div id="notification-message"></div>
+    </div>
+    
+    <script src="manageUser.js"></script>
+  </body>
+</html>

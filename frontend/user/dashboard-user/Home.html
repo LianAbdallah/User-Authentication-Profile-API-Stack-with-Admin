@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./userdashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <h2>Settings</h2>
+        <ul>
+          <li>
+            <a href="./Home.html" id="home-link"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="./profile.html" class="active" id="profile-link"
+              ><i class="fas fa-user"></i> Profile</a
+            >
+          </li>
+          <li>
+            <a href="../login/index.html" id="logoutBtn"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+          <li>
+            <a href="../../dashboard-Admin/Manage Users.html" id="adminBtn"
+              ><i class="fas fa-sign-out-alt"></i> Admin dashboard</a>
+          </li>
+        </ul>
+      </aside>
+      <main class="main-content">
+        <section class="account-info">
+          <div class="card">
+            <div class="card-header">
+              <i class="fas fa-user"></i> Profile Information
+            </div>
+
+            <div class="card-body">
+              <div class="user-info">
+                <div class="info-item">
+                  <i class="fas fa-user"></i>
+                  <p>Full Name: <span id="user-name">Noor</span></p>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-envelope"></i>
+                  <p>Email: <span id = "email">noor@example.com</span></p>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-phone"></i>
+                  <p>Phone: <span id="phone">07888888</span></p>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <p>Account Created On: <span id="created-at">March 17, 2025</span></p>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <p>Last Login: <span id="last-login">March 15, 2024</span></p>
+                </div>
+              </div>
+              <div class="buttons">
+                <a href="./profile.html" class="btn-edit">Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="userData.js"></script>
+  </body>
+</html>
